@@ -13,7 +13,6 @@ public class RandomNumberSelector extends JFrame {
     private JPanel mainPanel;
     private Timer animationTimer;
     private Random random = new Random();
-    private JButton fullScreenButton;
 
     // 在类的开头添加字体相关的常量
     private static final Font NUMBER_FONT = new Font("Helvetica", Font.BOLD, 48);
@@ -54,26 +53,78 @@ public class RandomNumberSelector extends JFrame {
     public RandomNumberSelector() {
         setTitle("随机数字选择器");
         
-        // 获取屏幕尺寸
+        // 获取屏幕设备
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice gd = ge.getDefaultScreenDevice();
-        DisplayMode dm = gd.getDisplayMode();
         
-        // 检查是否为Mac系统
-        boolean isMac = System.getProperty("os.name").toLowerCase().contains("mac");
+        // 设置为无边框
+        setUndecorated(true);
         
-        if (isMac) {
-            // Mac系统使用最大化
-            setSize(dm.getWidth(), dm.getHeight());
-            setExtendedState(Frame.MAXIMIZED_BOTH);
-        } else {
-            // Windows系统使用全屏
-            setUndecorated(true);
+        // 检查是否支持全屏模式
+        if (gd.isFullScreenSupported()) {
+            // 设置为全屏
             gd.setFullScreenWindow(this);
+        } else {
+            // 如果不支持全屏，则使用最大化窗口
+            setExtendedState(JFrame.MAXIMIZED_BOTH);
+            // 获取屏幕尺寸
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            setSize(screenSize.width, screenSize.height);
         }
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        
+        // 删除 setLocationRelativeTo(null); 因为我们已经用 setBounds 设置了位置
+
+        // 修改标题栏布局
+        JPanel titleBar = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0, 0));
+        titleBar.setBackground(BACKGROUND_COLOR);
+        
+        // 创建最小化按钮
+        JButton minimizeButton = new JButton("─");
+        minimizeButton.setFocusPainted(false);
+        minimizeButton.setBorderPainted(false);
+        minimizeButton.setBackground(BACKGROUND_COLOR);
+        minimizeButton.setPreferredSize(new Dimension(45, 30));
+        minimizeButton.addActionListener(e -> {
+            setState(Frame.ICONIFIED);
+        });
+
+        // 创建关闭按钮
+        JButton closeButton = new JButton("×");
+        closeButton.setFocusPainted(false);
+        closeButton.setBorderPainted(false);
+        closeButton.setBackground(BACKGROUND_COLOR);
+        closeButton.setPreferredSize(new Dimension(45, 30));
+        closeButton.addActionListener(e -> {
+            SoundManager.playButtonClick();
+            showCustomConfirmDialog();
+        });
+
+        // 设置按钮样式
+        Font buttonFont = new Font("Arial", Font.BOLD, 16);
+        minimizeButton.setFont(buttonFont);
+        closeButton.setFont(buttonFont);
+        
+        // 添加鼠标悬停效果
+        Color hoverColor = new Color(220, 220, 220);
+        MouseAdapter buttonHover = new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                ((JButton)e.getSource()).setBackground(hoverColor);
+            }
+            public void mouseExited(MouseEvent e) {
+                ((JButton)e.getSource()).setBackground(BACKGROUND_COLOR);
+            }
+        };
+        
+        minimizeButton.addMouseListener(buttonHover);
+        closeButton.addMouseListener(buttonHover);
+
+        titleBar.add(minimizeButton);
+        titleBar.add(closeButton);
+
+        // 将标题栏添加到窗口顶部
+        add(titleBar, BorderLayout.NORTH);
 
         // 创建主面板，使用BorderLayout并添加更大的边距
         mainPanel = new JPanel(new BorderLayout(50, 50));  // 增加间距
@@ -116,52 +167,30 @@ public class RandomNumberSelector extends JFrame {
                 return false;  // 不消费其他事件
             });
 
-        // 添加按钮面板
+        // 修改底部按钮面板
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 20));
         buttonPanel.setBackground(BACKGROUND_COLOR);
 
         // 生成数字按钮
         JButton generateButton = new JButton("生成数字");
-        generateButton.setFont(new Font("Arial", Font.BOLD, 16));  // 增大按钮字体
-        generateButton.addActionListener(e -> {
-            generateNumbers();
-        });
-
-        // 全屏按钮
-        fullScreenButton = new JButton("退出全屏");  // 使用成员变量
-        fullScreenButton.setFont(new Font("Arial", Font.BOLD, 16));
-        fullScreenButton.addActionListener(e -> {
-            toggleFullScreen();
-        });
+        generateButton.setFont(new Font("Arial", Font.BOLD, 16));
+        generateButton.addActionListener(e -> generateNumbers());
 
         // 历史记录按钮
         JButton historyButton = new JButton("历史记录");
         historyButton.setFont(new Font("Arial", Font.BOLD, 16));
         historyButton.addActionListener(e -> showHistory());
 
-        // 添加退出按钮
-        JButton exitButton = new JButton("退出程序");
-        exitButton.setFont(new Font("Arial", Font.BOLD, 16));
-        exitButton.addActionListener(e -> {
-            SoundManager.playButtonClick();
-            int result = JOptionPane.showConfirmDialog(
-                this,
-                "确定要退出程序吗？",
-                "确认退出",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE
-            );
-            if (result == JOptionPane.YES_OPTION) {
-                System.exit(0);
-            }
-        });
-
         buttonPanel.add(generateButton);
-        buttonPanel.add(fullScreenButton);
         buttonPanel.add(historyButton);
-        buttonPanel.add(exitButton);  // 添加退出按钮
 
+        // 设置按钮样式
+        setFlatButtonStyle(generateButton);
+        setFlatButtonStyle(historyButton);
+
+        // 添加面板到窗口
         setLayout(new BorderLayout());
+        add(titleBar, BorderLayout.NORTH);
         add(mainPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
 
@@ -172,11 +201,9 @@ public class RandomNumberSelector extends JFrame {
 
         // 在构造函数中，对每个按钮应用新样式
         setFlatButtonStyle(generateButton);
-        setFlatButtonStyle(fullScreenButton);
         setFlatButtonStyle(historyButton);
-        setFlatButtonStyle(exitButton);  // 设置退出按钮样式
 
-        // 添加窗口大小改变的监听器
+        // 添加窗口大小改变的监听
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -328,7 +355,7 @@ public class RandomNumberSelector extends JFrame {
                 animationTimer.stop();
                 displayFinalNumbers(finalNumbers, panelSize, fontSize);
                 // 获取并启用生成按钮
-                JPanel buttonPanel = (JPanel) getContentPane().getComponent(1);
+                JPanel buttonPanel = (JPanel) getContentPane().getComponent(2);
                 JButton generateButton = (JButton) buttonPanel.getComponent(0);
                 generateButton.setEnabled(true);
                 return;
@@ -340,41 +367,46 @@ public class RandomNumberSelector extends JFrame {
             JPanel topPanel = (JPanel) contentPanel.getComponent(0);
             JPanel bottomPanel = (JPanel) contentPanel.getComponent(1);
             
-            topPanel.removeAll();
-            bottomPanel.removeAll();
-            
-            // 更新上面三个面板
-            for (int i = 0; i < 3; i++) {
-                int num1 = random.nextInt(20) + 1;
-                int num2 = random.nextInt(20) + 1;
-                JPanel numberPanel = createNumberPanel(
-                    String.valueOf(num1),
-                    String.valueOf(num2)
-                );
-                numberPanel.setPreferredSize(panelSize);
-                updatePanelFontSize(numberPanel, fontSize);
-                topPanel.add(numberPanel);
-            }
-            
-            // 更新下面两个面板
-            for (int i = 0; i < 2; i++) {
-                int num1 = random.nextInt(20) + 1;
-                int num2 = random.nextInt(20) + 1;
-                JPanel numberPanel = createNumberPanel(
-                    String.valueOf(num1),
-                    String.valueOf(num2)
-                );
-                numberPanel.setPreferredSize(panelSize);
-                updatePanelFontSize(numberPanel, fontSize);
-                bottomPanel.add(numberPanel);
-            }
-            
-            mainPanel.revalidate();
-            mainPanel.repaint();
+            // 动画逻辑
+            displayRandomNumbers(topPanel, bottomPanel, panelSize, fontSize);
             
             frameCount[0]++;
         });
         animationTimer.start();
+    }
+
+    private void displayRandomNumbers(JPanel topPanel, JPanel bottomPanel, Dimension panelSize, int fontSize) {
+        topPanel.removeAll();
+        bottomPanel.removeAll();
+        
+        // 更新上面三个面板
+        for (int i = 0; i < 3; i++) {
+            int num1 = random.nextInt(20) + 1;
+            int num2 = random.nextInt(20) + 1;
+            JPanel numberPanel = createNumberPanel(
+                String.valueOf(num1),
+                String.valueOf(num2)
+            );
+            numberPanel.setPreferredSize(panelSize);
+            updatePanelFontSize(numberPanel, fontSize);
+            topPanel.add(numberPanel);
+        }
+        
+        // 更新下面两个面板
+        for (int i = 0; i < 2; i++) {
+            int num1 = random.nextInt(20) + 1;
+            int num2 = random.nextInt(20) + 1;
+            JPanel numberPanel = createNumberPanel(
+                String.valueOf(num1),
+                String.valueOf(num2)
+            );
+            numberPanel.setPreferredSize(panelSize);
+            updatePanelFontSize(numberPanel, fontSize);
+            bottomPanel.add(numberPanel);
+        }
+        
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }
 
     private List<List<Integer>> generateFinalNumbers() {
@@ -489,7 +521,7 @@ public class RandomNumberSelector extends JFrame {
             if (c instanceof JLabel) {
                 JLabel label = (JLabel) c;
                 if ("·".equals(label.getText())) {
-                    // 分隔符使用较小的字体
+                    // 分隔符用较小的字
                     label.setFont(new Font("Arial", Font.PLAIN, fontSize));
                     label.setForeground(SEPARATOR_COLOR);
                 } else {
@@ -511,58 +543,112 @@ public class RandomNumberSelector extends JFrame {
         SoundManager.playButtonClick();
         
         // 获取底部面板中的生成数字按钮
-        JPanel buttonPanel = (JPanel) getContentPane().getComponent(1);
+        JPanel buttonPanel = (JPanel) getContentPane().getComponent(2);
         JButton generateButton = (JButton) buttonPanel.getComponent(0);
         generateButton.setEnabled(false);
         
         startNumberAnimation();
     }
 
-    // 修改全屏切换方法，使用Mac友好的方式
-    private void toggleFullScreen() {
-        SoundManager.playButtonClick();
-        // 检查是否为Mac系统
-        boolean isMac = System.getProperty("os.name").toLowerCase().contains("mac");
-        
-        if (isMac) {
-            // Mac系统使用窗口最大化
-            if ((getExtendedState() & Frame.MAXIMIZED_BOTH) != 0) {
-                // 当前是最大化状态，恢复到正常大小
-                setExtendedState(Frame.NORMAL);
-                fullScreenButton.setText("全屏显示");
-            } else {
-                // 最大化窗口
-                setExtendedState(Frame.MAXIMIZED_BOTH);
-                fullScreenButton.setText("退出全屏");
-            }
-        } else {
-            // Windows系统使用原来的全屏方式
-            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            GraphicsDevice gd = ge.getDefaultScreenDevice();
-            
-            if (gd.getFullScreenWindow() == this) {
-                // 退出全屏
-                gd.setFullScreenWindow(null);
-                dispose();
-                setUndecorated(false);
-                setVisible(true);
-            } else {
-                // 进入全屏
-                dispose();
-                setUndecorated(true);
-                setVisible(true);
-                gd.setFullScreenWindow(this);
-            }
-        }
-        
-        // 更新面板大小
-        SwingUtilities.invokeLater(this::updatePanelSizes);
-    }
-
     private void showHistory() {
         SoundManager.playButtonClick();
         HistoryDialog dialog = new HistoryDialog(this, history);
         dialog.setVisible(true);
+    }
+
+    // 添加自定义确认对话框方法
+    private void showCustomConfirmDialog() {
+        // 创建自定义对话框
+        JDialog dialog = new JDialog(this, "确认退出", true);
+        dialog.setUndecorated(true);
+        dialog.setBackground(new Color(0, 0, 0, 0));
+        
+        // 创建主面板
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.setBackground(Color.WHITE);
+        mainPanel.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200), 1));
+        
+        // 创建标题栏
+        JPanel titleBar = new JPanel(new BorderLayout());
+        titleBar.setBackground(BACKGROUND_COLOR);
+        titleBar.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
+        JLabel titleLabel = new JLabel("确认退出");
+        titleLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        titleBar.add(titleLabel, BorderLayout.WEST);
+        
+        // 创建内容面板
+        JPanel contentPanel = new JPanel(new BorderLayout());
+        contentPanel.setBackground(Color.WHITE);
+        contentPanel.setBorder(BorderFactory.createEmptyBorder(20, 25, 20, 25));
+        JLabel messageLabel = new JLabel("确定要退出程序吗？");
+        messageLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        contentPanel.add(messageLabel, BorderLayout.CENTER);
+        
+        // 创建按钮面板
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 0));
+        buttonPanel.setBackground(Color.WHITE);
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 15, 15));
+        
+        // 创建取消按钮
+        JButton cancelButton = new JButton("取消");
+        cancelButton.setPreferredSize(new Dimension(80, 30));
+        styleDialogButton(cancelButton, Color.WHITE, new Color(108, 117, 125));
+        cancelButton.addActionListener(e -> dialog.dispose());
+        
+        // 创建确认按钮
+        JButton confirmButton = new JButton("确认");
+        confirmButton.setPreferredSize(new Dimension(80, 30));
+        styleDialogButton(confirmButton, new Color(220, 53, 69), Color.WHITE);
+        confirmButton.addActionListener(e -> System.exit(0));
+        
+        buttonPanel.add(cancelButton);
+        buttonPanel.add(confirmButton);
+        
+        // 组装对话框
+        mainPanel.add(titleBar, BorderLayout.NORTH);
+        mainPanel.add(contentPanel, BorderLayout.CENTER);
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+        
+        dialog.add(mainPanel);
+        dialog.pack();
+        dialog.setLocationRelativeTo(this);
+        
+        // 添加按下ESC键关闭对话框的功能
+        dialog.getRootPane().registerKeyboardAction(
+            e -> dialog.dispose(),
+            KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
+            JComponent.WHEN_IN_FOCUSED_WINDOW
+        );
+        
+        // 显示对话框
+        dialog.setVisible(true);
+    }
+
+    // 添加对话框按钮样式��法
+    private void styleDialogButton(JButton button, Color background, Color foreground) {
+        button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+        button.setBackground(background);
+        button.setForeground(foreground);
+        button.setBorder(BorderFactory.createLineBorder(foreground, 1));
+        button.setFocusPainted(false);
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        
+        // 添加悬停效果
+        button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if (background.equals(Color.WHITE)) {
+                    button.setBackground(new Color(248, 249, 250));
+                } else {
+                    button.setBackground(background.darker());
+                }
+            }
+            
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(background);
+            }
+        });
     }
 
     public static void main(String[] args) {
