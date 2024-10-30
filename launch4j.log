@@ -1,0 +1,523 @@
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe"
+Args length:	66/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe"
+Args length:	66/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe"
+Args length:	66/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe"
+Args length:	66/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe"
+Args length:	66/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe"
+Args length:	66/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomNumberSelector.exe"
+Args length:	66/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	60/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 5713 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 5713 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	.\jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 8604 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 8604 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -Dfile.encoding=UTF-8 -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	100/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	.\jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 8824 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 8824 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -Dfile.encoding=UTF-8 -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	100/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 8843 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 8843 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -Dfile.encoding=UTF-8 -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	100/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 8731 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 8731 MB, Heap size: 512 MB
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-21
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+JRE paths:	C:\Program Files\Java\jdk-21;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\税务证书应用客户端;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\dotnet\;D:\platform-tools;C:\Program Files\Tailscale\;C:\Program Files\Java\jdk-21\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-21\bin
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Version string: 1.021.000_005 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 8500 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 8500 MB, Heap size: 512 MB
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 8160 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 8160 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	.\jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6202 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6202 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6192 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6192 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6285 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6285 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.008.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-23
+JRE paths:	C:\Program Files\Java\jdk-23
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6267 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6267 MB, Heap size: 512 MB
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	.\jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6198 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6198 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	.\jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6218 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6218 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\.\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -Dfile.encoding=UTF-8 -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	100/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6161 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6161 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 6109 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 6109 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: Yes
+Java min ver:	1.008.000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (OK)
+Heap -Xms:	Requested 128 MB / 0%, Available: 5967 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 5967 MB, Heap size: 512 MB
+Launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	E:\开发程序类\RandomNumberSelector\RandomSelector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	E:\开发程序类\RandomNumberSelector\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.017.000_000
+Java max ver:	
+JRE paths:	jre
+Check launcher:	E:\开发程序类\RandomNumberSelector\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_432 / 64-Bit (Ignore)
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Version string: 1.008.000 / 64-Bit (Ignore)
+Ignore:		1.008.000
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_431
+Version string: 1.008.000_431 / 64-Bit (Ignore)
+Ignore:		1.008.000_431
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+64-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+64-bit search:	SOFTWARE\JavaSoft\JDK...
+Check:		SOFTWARE\JavaSoft\JDK\23.0.1
+Version string: 1.023.000_001 / 64-Bit (OK)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Match:		1.023.000_001
+Runtime used:	1.023.000_001 (64-bit)
+Heap -Xms:	Requested 128 MB / 0%, Available: 5999 MB, Heap size: 128 MB
+Heap -Xmx:	Requested 512 MB / 0%, Available: 5999 MB, Heap size: 512 MB
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	-Xms128m -Xmx512m -jar "E:\开发程序类\RandomNumberSelector\RandomSelector.exe"
+Args length:	78/32768 chars
+Exit code:	0

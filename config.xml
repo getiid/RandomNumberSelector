@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>RandomNumberSelector.jar</jar>
+  <outfile>RandomSelector.exe</outfile>
+  <errTitle>Random Number Selector</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\icons\favicon.ico</icon>
+  <jre>
+    <path>jre</path>
+    <minVersion>17.0.0</minVersion>
+    <maxVersion></maxVersion>
+    <initialHeapSize>128</initialHeapSize>
+    <maxHeapSize>512</maxHeapSize>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>Random Number Selector</fileDescription>
+    <copyright>Copyright (C) 2024</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>Random Number Selector</productName>
+    <companyName></companyName>
+    <internalName>RandomNumberSelector</internalName>
+    <originalFilename>RandomSelector.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>SIMPLIFIED_CHINESE</language>
+  </versionInfo>
+</launch4jConfig>
