@@ -19,13 +19,10 @@ public class RandomNumberSelector extends JFrame {
     private static final Color NUMBER_COLOR = new Color(0, 0, 0); // 纯黑色
     private static final Color SEPARATOR_COLOR = new Color(100, 100, 100); // 灰色分隔符
 
-    // 在类的开头添加历史记录列表
-    private List<NumberRecord> history = new ArrayList<>();
-
     // 在类的开头修改颜色常量
     private static final Color BACKGROUND_COLOR = new Color(240, 244, 248); // 统一使用这个背景色
     private static final Color BUTTON_COLOR = new Color(24, 144, 255);      // 更清新的蓝色
-    private static final Color BUTTON_HOVER_COLOR = new Color(64, 169, 255); // 悬浅蓝色
+    private static final Color BUTTON_HOVER_COLOR = new Color(64, 169, 255); // 悬蓝色
     private static final Color PANEL_BACKGROUND = Color.WHITE;              // 数字面板背景色
 
     // 修改setFlatButtonStyle方法
@@ -129,7 +126,7 @@ public class RandomNumberSelector extends JFrame {
         // 将标题栏添加到窗口顶部
         add(titleBar, BorderLayout.NORTH);
 
-        // 创建主面板，使用BorderLayout并添加更大的边距
+        // 创建主面板使用BorderLayout并添加更大的边距
         mainPanel = new JPanel(new BorderLayout(50, 50));  // 加间距
         mainPanel.setBackground(BACKGROUND_COLOR);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));  // 增加边距
@@ -188,11 +185,10 @@ public class RandomNumberSelector extends JFrame {
         // 历史记录按钮
         JButton historyButton = new JButton("历史记录");
         historyButton.setFont(new Font("Arial", Font.BOLD, 16));
-        historyButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showHistory();
-            }
+        historyButton.addActionListener(e -> {
+            SoundManager.playButtonClick();
+            HistoryDialog dialog = new HistoryDialog(this, DataManager.getHistory());
+            dialog.setVisible(true);
         });
 
         buttonPanel.add(generateButton);
@@ -271,7 +267,7 @@ public class RandomNumberSelector extends JFrame {
                             // 点号使用相同大小的字体
                             label.setFont(new Font("Arial", Font.BOLD, fontSize));
                         } else {
-                            // 数字使用粗体
+                            // 字使用粗体
                             label.setFont(new Font("Arial", Font.BOLD, fontSize));
                         }
                     }
@@ -286,19 +282,19 @@ public class RandomNumberSelector extends JFrame {
 
         // 添加上面三个面板
         for (int i = 0; i < 3; i++) {
-            topPanel.add(createNumberPanel("", ""));
+            topPanel.add(createNumberPanel("", "", 0));
         }
 
         // 添加下面两个面板
         for (int i = 0; i < 2; i++) {
-            bottomPanel.add(createNumberPanel("", ""));
+            bottomPanel.add(createNumberPanel("", "", 0));
         }
 
         mainPanel.revalidate();
         mainPanel.repaint();
     }
 
-    private JPanel createNumberPanel(String num1, String num2) {
+    private JPanel createNumberPanel(String num1, String num2, int groupIndex) {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setPreferredSize(new Dimension(400, 240));
         panel.setBackground(BACKGROUND_COLOR);
@@ -400,7 +396,7 @@ public class RandomNumberSelector extends JFrame {
             if (frameCount[0] >= totalFrames) {
                 animationTimer.stop();
                 displayFinalNumbers(finalNumbers, panelSize, fontSize);
-                // 获取并启用生成按钮
+                // ��取并启用生成按钮
                 JPanel buttonPanel = (JPanel) getContentPane().getComponent(2);
                 JButton generateButton = (JButton) buttonPanel.getComponent(0);
                 generateButton.setEnabled(true);
@@ -426,13 +422,14 @@ public class RandomNumberSelector extends JFrame {
         topPanel.removeAll();
         bottomPanel.removeAll();
         
-        // 更新上面三���面板
+        // 更新上面三面板
         for (int i = 0; i < 3; i++) {
             int num1 = random.nextInt(20) + 1;
             int num2 = random.nextInt(20) + 1;
             JPanel numberPanel = createNumberPanel(
                 String.valueOf(num1),
-                String.valueOf(num2)
+                String.valueOf(num2),
+                0
             );
             numberPanel.setPreferredSize(panelSize);
             updatePanelFontSize(numberPanel, fontSize);
@@ -445,7 +442,8 @@ public class RandomNumberSelector extends JFrame {
             int num2 = random.nextInt(20) + 1;
             JPanel numberPanel = createNumberPanel(
                 String.valueOf(num1),
-                String.valueOf(num2)
+                String.valueOf(num2),
+                0
             );
             numberPanel.setPreferredSize(panelSize);
             updatePanelFontSize(numberPanel, fontSize);
@@ -531,7 +529,8 @@ public class RandomNumberSelector extends JFrame {
             List<Integer> group = groups.get(i);
             JPanel numberPanel = createNumberPanel(
                 String.valueOf(group.get(0)),
-                String.valueOf(group.get(1))
+                String.valueOf(group.get(1)),
+                i  // 传入正确的组索引
             );
             numberPanel.setPreferredSize(panelSize);
             updatePanelFontSize(numberPanel, fontSize);
@@ -543,7 +542,8 @@ public class RandomNumberSelector extends JFrame {
             List<Integer> group = groups.get(i);
             JPanel numberPanel = createNumberPanel(
                 String.valueOf(group.get(0)),
-                String.valueOf(group.get(1))
+                String.valueOf(group.get(1)),
+                i  // 传入正确的组索引
             );
             numberPanel.setPreferredSize(panelSize);
             updatePanelFontSize(numberPanel, fontSize);
@@ -559,7 +559,7 @@ public class RandomNumberSelector extends JFrame {
             numbers[i][0] = groups.get(i).get(0);
             numbers[i][1] = groups.get(i).get(1);
         }
-        history.add(new NumberRecord(numbers));
+        DataManager.addRecord(new NumberRecord(numbers));
     }
 
     // 更新updatePanelFontSize方法
@@ -609,7 +609,7 @@ public class RandomNumberSelector extends JFrame {
 
     private void showHistory() {
         SoundManager.playButtonClick();
-        HistoryDialog dialog = new HistoryDialog(this, history);
+        HistoryDialog dialog = new HistoryDialog(this, DataManager.getHistory());
         dialog.setVisible(true);
     }
 
@@ -706,6 +706,122 @@ public class RandomNumberSelector extends JFrame {
                 button.setBackground(background);
             }
         });
+    }
+
+    // 添加补登按钮样式方法
+    private void styleRegisterButton(JButton button) {
+        button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+        button.setBackground(new Color(24, 144, 255));
+        button.setForeground(Color.WHITE);
+        button.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
+        button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        
+        // 添加悬停效果
+        button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(new Color(64, 169, 255));
+            }
+            
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(new Color(24, 144, 255));
+            }
+        });
+    }
+
+    // 添加补登对话框方法
+    private void showRegisterDialog(int groupIndex) {
+        JDialog dialog = new JDialog(this, "补登信息", true);
+        dialog.setUndecorated(true);
+        
+        // 创建主面板
+        JPanel mainPanel = new JPanel(new BorderLayout(0, 10));
+        mainPanel.setBackground(Color.WHITE);
+        mainPanel.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200), 1));
+        
+        // 创建标题栏
+        JPanel titleBar = new JPanel(new BorderLayout());
+        titleBar.setBackground(new Color(240, 244, 248));
+        titleBar.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
+        
+        JLabel titleLabel = new JLabel("补登信息 - 第" + (groupIndex + 1) + "组");
+        titleLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        
+        JButton closeButton = new JButton("×");
+        closeButton.setFocusPainted(false);
+        closeButton.setBorderPainted(false);
+        closeButton.setBackground(new Color(240, 244, 248));
+        closeButton.addActionListener(e -> dialog.dispose());
+        
+        titleBar.add(titleLabel, BorderLayout.WEST);
+        titleBar.add(closeButton, BorderLayout.EAST);
+        
+        // 创建内容面板
+        JPanel contentPanel = new JPanel(new GridBagLayout());
+        contentPanel.setBackground(Color.WHITE);
+        contentPanel.setBorder(BorderFactory.createEmptyBorder(20, 25, 20, 25));
+        
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        
+        // 添加姓名输入框
+        JTextField nameField = new JTextField(20);
+        JTextField cardIdField = new JTextField(20);
+        
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        contentPanel.add(new JLabel("姓名："), gbc);
+        
+        gbc.gridx = 1;
+        contentPanel.add(nameField, gbc);
+        
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        contentPanel.add(new JLabel("卡号："), gbc);
+        
+        gbc.gridx = 1;
+        contentPanel.add(cardIdField, gbc);
+        
+        // 创建按钮面板
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanel.setBackground(Color.WHITE);
+        
+        JButton confirmButton = new JButton("确认");
+        styleDialogButton(confirmButton, new Color(24, 144, 255), Color.WHITE);
+        confirmButton.addActionListener(e -> {
+            // 保存补登信息
+            NumberRecord currentRecord = DataManager.getHistory().get(DataManager.getHistory().size() - 1);
+            currentRecord.addRegistration(groupIndex, nameField.getText(), cardIdField.getText());
+            DataManager.updateRecord(currentRecord);
+            dialog.dispose();
+        });
+        
+        buttonPanel.add(confirmButton);
+        
+        // 组装对话框
+        mainPanel.add(titleBar, BorderLayout.NORTH);
+        mainPanel.add(contentPanel, BorderLayout.CENTER);
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+        
+        dialog.add(mainPanel);
+        dialog.pack();
+        dialog.setLocationRelativeTo(this);
+        
+        // 添加卡号输入框的键盘监听
+        cardIdField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    confirmButton.doClick();
+                }
+            }
+        });
+        
+        dialog.setVisible(true);
     }
 
     public static void main(String[] args) {
