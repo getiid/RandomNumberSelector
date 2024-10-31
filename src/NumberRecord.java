@@ -1,31 +1,41 @@
 package src;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class NumberRecord {
-    private LocalDateTime timestamp;
-    private int[][] numbers;  // 5组数字，每组2个
-    
+    private int[][] numbers;
+    private String timestamp;
+    private LocalDateTime dateTime;
+
     public NumberRecord(int[][] numbers) {
-        this.timestamp = LocalDateTime.now();
         this.numbers = numbers;
+        this.dateTime = LocalDateTime.now();
+        this.timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
-    
-    public String getFormattedTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        return timestamp.format(formatter);
-    }
-    
+
     public int[][] getNumbers() {
         return numbers;
     }
-    
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public String getDate() {
+        return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
+
+    public String getTime() {
+        return dateTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getFormattedTime()).append("\n");
-        for (int i = 0; i < numbers.length; i++) {
-            sb.append(String.format("第%d组: %d·%d\n", i + 1, numbers[i][0], numbers[i][1]));
+        sb.append(timestamp).append("\n");
+        for (int[] pair : numbers) {
+            sb.append(pair[0]).append(" - ").append(pair[1]).append("\n");
         }
         return sb.toString();
     }

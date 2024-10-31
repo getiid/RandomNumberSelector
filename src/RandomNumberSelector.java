@@ -15,7 +15,7 @@ public class RandomNumberSelector extends JFrame {
     private Random random = new Random();
 
     // 在类的开头添加字体相关的常量
-    private static final Font NUMBER_FONT = new Font("Helvetica", Font.BOLD, 48);
+    private static final Font NUMBER_FONT = new Font("Helvetica", Font.BOLD, 150);
     private static final Color NUMBER_COLOR = new Color(0, 0, 0); // 纯黑色
     private static final Color SEPARATOR_COLOR = new Color(100, 100, 100); // 灰色分隔符
 
@@ -25,7 +25,7 @@ public class RandomNumberSelector extends JFrame {
     // 在类的开头修改颜色常量
     private static final Color BACKGROUND_COLOR = new Color(240, 244, 248); // 统一使用这个背景色
     private static final Color BUTTON_COLOR = new Color(24, 144, 255);      // 更清新的蓝色
-    private static final Color BUTTON_HOVER_COLOR = new Color(64, 169, 255); // 悬停时的浅蓝色
+    private static final Color BUTTON_HOVER_COLOR = new Color(64, 169, 255); // 悬浅蓝色
     private static final Color PANEL_BACKGROUND = Color.WHITE;              // 数字面板背景色
 
     // 修改setFlatButtonStyle方法
@@ -36,7 +36,7 @@ public class RandomNumberSelector extends JFrame {
         button.setForeground(Color.WHITE);
         button.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         button.setPreferredSize(new Dimension(120, 40));
-        button.setOpaque(true);  // 确保按钮背景色可见
+        button.setOpaque(true);  // 保按钮背景色可见
         button.setContentAreaFilled(true);  // 确保内容区域填充
         
         // 添加鼠标悬停效果
@@ -90,15 +90,18 @@ public class RandomNumberSelector extends JFrame {
             setState(Frame.ICONIFIED);
         });
 
-        // 创建关闭按钮
+        // 创建闭按钮
         JButton closeButton = new JButton("×");
         closeButton.setFocusPainted(false);
         closeButton.setBorderPainted(false);
         closeButton.setBackground(BACKGROUND_COLOR);
         closeButton.setPreferredSize(new Dimension(45, 30));
-        closeButton.addActionListener(e -> {
-            SoundManager.playButtonClick();
-            showCustomConfirmDialog();
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SoundManager.playButtonClick();
+                showCustomConfirmDialog();
+            }
         });
 
         // 设置按钮样式
@@ -127,7 +130,7 @@ public class RandomNumberSelector extends JFrame {
         add(titleBar, BorderLayout.NORTH);
 
         // 创建主面板，使用BorderLayout并添加更大的边距
-        mainPanel = new JPanel(new BorderLayout(50, 50));  // 增加间距
+        mainPanel = new JPanel(new BorderLayout(50, 50));  // 加间距
         mainPanel.setBackground(BACKGROUND_COLOR);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));  // 增加边距
 
@@ -135,11 +138,12 @@ public class RandomNumberSelector extends JFrame {
         JPanel wrapperPanel = new JPanel(new GridBagLayout());
         wrapperPanel.setBackground(BACKGROUND_COLOR);
         
-        // 创建内容面板
+        // 创建内容面
         JPanel contentPanel = new JPanel(new BorderLayout(30, 30));
         contentPanel.setBackground(BACKGROUND_COLOR);
 
         // 创建上下两个子面板
+
         JPanel topPanel = new JPanel(new GridLayout(1, 3, 30, 0));
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 30)); // 增加垂直间距
         
@@ -174,12 +178,22 @@ public class RandomNumberSelector extends JFrame {
         // 生成数字按钮
         JButton generateButton = new JButton("生成数字");
         generateButton.setFont(new Font("Arial", Font.BOLD, 16));
-        generateButton.addActionListener(e -> generateNumbers());
+        generateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                generateNumbers();
+            }
+        });
 
         // 历史记录按钮
         JButton historyButton = new JButton("历史记录");
         historyButton.setFont(new Font("Arial", Font.BOLD, 16));
-        historyButton.addActionListener(e -> showHistory());
+        historyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showHistory();
+            }
+        });
 
         buttonPanel.add(generateButton);
         buttonPanel.add(historyButton);
@@ -194,14 +208,8 @@ public class RandomNumberSelector extends JFrame {
         add(mainPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
 
-        // 移除窗口大小改变的监听器，因为我们现在总是全屏显示
-        
         // 初始化完成后立即更新面板大小
         SwingUtilities.invokeLater(this::updatePanelSizes);
-
-        // 在构造函数中，对每个按钮应用新样式
-        setFlatButtonStyle(generateButton);
-        setFlatButtonStyle(historyButton);
 
         // 添加窗口大小改变的监听
         addComponentListener(new ComponentAdapter() {
@@ -224,15 +232,15 @@ public class RandomNumberSelector extends JFrame {
             
             // 调整计算逻辑，确保有足够空间显示数字
             int panelWidth = Math.min((windowWidth - 300) / 3, (windowHeight - 250) / 2);
-            int panelHeight = panelWidth * 3 / 4;  // 调整高宽比为 3:4，给数字留出更多空间
+            int panelHeight = panelWidth * 3 / 4;  // 调整高宽比
             
             // 调整最小尺寸
-            panelWidth = Math.max(panelWidth, 160);  // 减小最小宽度
-            panelHeight = Math.max(panelHeight, 120); // 相应调整最小高度
+            panelWidth = Math.max(panelWidth, 200);  // 增加最小宽度
+            panelHeight = Math.max(panelHeight, 150); // 增加最小高度
             
             // 调整字体大小计算逻辑
-            int fontSize = Math.min(panelWidth / 4, panelHeight / 3);  // 调整字体大小比例
-            fontSize = Math.max(fontSize, 20); // 调整最小字体大小
+            int fontSize = (int)Math.min(panelWidth / 1.5, panelHeight / 1.5);
+            fontSize = Math.max(fontSize, 64);
             
             // 获取正确的面板引用
             JPanel wrapperPanel = (JPanel) mainPanel.getComponent(0);
@@ -255,7 +263,7 @@ public class RandomNumberSelector extends JFrame {
                 JPanel panel = (JPanel) comp;
                 panel.setPreferredSize(size);
                 
-                // 更新面板中的标签
+                // 更新面板中的标
                 for (Component c : panel.getComponents()) {
                     if (c instanceof JLabel) {
                         JLabel label = (JLabel) c;
@@ -291,51 +299,90 @@ public class RandomNumberSelector extends JFrame {
     }
 
     private JPanel createNumberPanel(String num1, String num2) {
-        JPanel panel = new JPanel(new GridLayout(1, 3));
+        JPanel panel = new JPanel(new BorderLayout());
         panel.setPreferredSize(new Dimension(400, 240));
         panel.setBackground(BACKGROUND_COLOR);
         
-        // 减小边框和内边距
+        // 增加内边距，特别是底部边距
         panel.setBorder(BorderFactory.createCompoundBorder(
             new LineBorder(new Color(200, 200, 200), 2, true),
-            BorderFactory.createEmptyBorder(15, 15, 15, 15)  // 减小内边距
+            BorderFactory.createEmptyBorder(15, 15, 25, 15)  // 将底部内边距从15改为25
         ));
 
-        JLabel label1 = new JLabel(num1, SwingConstants.CENTER);
+        // 创建一个固定宽度的面板来包含数字和分隔符
+        JPanel centerPanel = new JPanel(new GridBagLayout());
+        centerPanel.setBackground(BACKGROUND_COLOR);
+
+        // 创建三个固定宽度的面板
+        JPanel leftPanel = new JPanel(new GridBagLayout());
+        JPanel middlePanel = new JPanel(new GridBagLayout());
+        JPanel rightPanel = new JPanel(new GridBagLayout());
+        
+        leftPanel.setBackground(BACKGROUND_COLOR);
+        middlePanel.setBackground(BACKGROUND_COLOR);
+        rightPanel.setBackground(BACKGROUND_COLOR);
+
+        // 增加面板高度
+        leftPanel.setPreferredSize(new Dimension(150, 220));    // 从200改为220
+        middlePanel.setPreferredSize(new Dimension(100, 220));  // 从200改为220
+        rightPanel.setPreferredSize(new Dimension(150, 220));   // 从200改为220
+
+        // 创建标签
+        JLabel label1 = new JLabel(num1, SwingConstants.RIGHT);
         JLabel separator = new JLabel("·", SwingConstants.CENTER);
-        JLabel label2 = new JLabel(num2, SwingConstants.CENTER);
+        JLabel label2 = new JLabel(num2, SwingConstants.LEFT);
         
-        // 设置标签背景为统一背景色
-        label1.setBackground(BACKGROUND_COLOR);
-        separator.setBackground(BACKGROUND_COLOR);
-        label2.setBackground(BACKGROUND_COLOR);
-        
+        // 配置标签
         configureNumberLabel(label1);
         configureSeparatorLabel(separator);
         configureNumberLabel(label2);
 
-        panel.add(label1);
-        panel.add(separator);
-        panel.add(label2);
+        // 为标签添加一些底部边距
+        label1.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
+        separator.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
+        label2.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
+
+        // 添加标签到各自的面板
+        leftPanel.add(label1);
+        middlePanel.add(separator);
+        rightPanel.add(label2);
+
+        // 使用 GridBagLayout 布局
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+
+        // 添加三个面板到中心面板
+        centerPanel.add(leftPanel, gbc);
+        gbc.gridx = 1;
+        gbc.weightx = 0.0;
+        centerPanel.add(middlePanel, gbc);
+        gbc.gridx = 2;
+        gbc.weightx = 1.0;
+        centerPanel.add(rightPanel, gbc);
+
+        // 将中心面板添加到主面板
+        panel.add(centerPanel, BorderLayout.CENTER);
         
         return panel;
     }
 
-    // 修改configureNumberLabel方法
     private void configureNumberLabel(JLabel label) {
         label.setFont(NUMBER_FONT);
         label.setForeground(NUMBER_COLOR);
-        label.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
         label.setBackground(BACKGROUND_COLOR);
         label.setOpaque(true);
+        label.setBorder(null);
     }
 
-    // 修改configureSeparatorLabel方法
     private void configureSeparatorLabel(JLabel label) {
-        label.setFont(new Font("Arial", Font.PLAIN, 48));
+        label.setFont(NUMBER_FONT);
         label.setForeground(SEPARATOR_COLOR);
         label.setBackground(BACKGROUND_COLOR);
         label.setOpaque(true);
+        label.setBorder(null);
     }
 
     private void startNumberAnimation() {
@@ -349,8 +396,7 @@ public class RandomNumberSelector extends JFrame {
         int fontSize = Math.min(panelWidth / 4, panelHeight / 2);
         Dimension panelSize = new Dimension(panelWidth, panelHeight);
         
-        animationTimer = new Timer(50, null);
-        animationTimer.addActionListener(e -> {
+        animationTimer = new Timer(50, e -> {
             if (frameCount[0] >= totalFrames) {
                 animationTimer.stop();
                 displayFinalNumbers(finalNumbers, panelSize, fontSize);
@@ -372,6 +418,7 @@ public class RandomNumberSelector extends JFrame {
             
             frameCount[0]++;
         });
+        
         animationTimer.start();
     }
 
@@ -379,7 +426,7 @@ public class RandomNumberSelector extends JFrame {
         topPanel.removeAll();
         bottomPanel.removeAll();
         
-        // 更新上面三个面板
+        // 更新上面三���面板
         for (int i = 0; i < 3; i++) {
             int num1 = random.nextInt(20) + 1;
             int num2 = random.nextInt(20) + 1;
@@ -470,7 +517,7 @@ public class RandomNumberSelector extends JFrame {
         // 播放数字生成完成音效
         SoundManager.playNumberGenerate();
         
-        // 获取正确的面板引用
+        // 获取正确的板引用
         JPanel wrapperPanel = (JPanel) mainPanel.getComponent(0);
         JPanel contentPanel = (JPanel) wrapperPanel.getComponent(0);
         JPanel topPanel = (JPanel) contentPanel.getComponent(0);
@@ -518,16 +565,26 @@ public class RandomNumberSelector extends JFrame {
     // 更新updatePanelFontSize方法
     private void updatePanelFontSize(JPanel panel, int fontSize) {
         for (Component c : panel.getComponents()) {
-            if (c instanceof JLabel) {
-                JLabel label = (JLabel) c;
-                if ("·".equals(label.getText())) {
-                    // 分隔符用较小的字
-                    label.setFont(new Font("Arial", Font.PLAIN, fontSize));
-                    label.setForeground(SEPARATOR_COLOR);
-                } else {
-                    // 数字使用更清晰的字体
-                    label.setFont(new Font("Helvetica", Font.BOLD, fontSize));
-                    label.setForeground(NUMBER_COLOR);
+            if (c instanceof JPanel) {
+                JPanel centerPanel = (JPanel) c;
+                for (Component centerComp : centerPanel.getComponents()) {
+                    if (centerComp instanceof JPanel) {
+                        JPanel subPanel = (JPanel) centerComp;
+                        for (Component label : subPanel.getComponents()) {
+                            if (label instanceof JLabel) {
+                                JLabel jLabel = (JLabel) label;
+                                if ("·".equals(jLabel.getText())) {
+                                    // 分隔符使用固定大小的字体
+                                    jLabel.setFont(new Font("Arial", Font.PLAIN, fontSize));
+                                    jLabel.setForeground(SEPARATOR_COLOR);
+                                } else {
+                                    // 数字使用更大的字体
+                                    jLabel.setFont(new Font("Helvetica", Font.BOLD, fontSize));
+                                    jLabel.setForeground(NUMBER_COLOR);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -624,7 +681,7 @@ public class RandomNumberSelector extends JFrame {
         dialog.setVisible(true);
     }
 
-    // 添加对话框按钮样式��法
+    // 添加对话框按钮样式法
     private void styleDialogButton(JButton button, Color background, Color foreground) {
         button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
         button.setBackground(background);
